@@ -1,0 +1,9 @@
+{
+	"servers": {
+		"my-mcp-ePy-SDK": {
+			"url": "https://gitmcp.io/wright0418/ePy_SDK",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}
