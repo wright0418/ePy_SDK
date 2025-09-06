@@ -50,6 +50,8 @@ print(ticks_add(0, -1))
 ### utime.time()
 
 # LED Class
+ - led_index from 1 to 64 , ePy support max 64 pcs rgb led
+ - 大量 LED 時記憶體/速度限制 , 使用 DMA 傳輸 , rgb_write() 硬體一次寫出，延遲時間極短
 ```python
 from machine import LED
 led = LED('ledy') # create an LED object for yellow LED , LED object have 'ledy', ledg', 'ledr' or LED.RGB support external WS2812B RGB LED
@@ -61,7 +63,8 @@ rgb = LED(LED.RGB) # create an LED object for external WS2812B RGB LED
 rgb.off() # turn the rgb led off
 rgb.lightness(50) # set the brightness of rgb led (0~100) , must set before write_rgb()
 led_index = 1 # set the index of rgb led if you have more than one rgb led
-RGB_COLOR = (255,0,0) # set the rgb color to red (R,G,B)
+
+RGB_COLOR = (255,0,0) # set the rgb color to red (R,G,B) clolor value 0~255
 rgb.rgb_write(led_index,*RGB_COLOR) # set the rgb led to red color
 # other write RGB method
 rgb_raw_data = ((0,255,0),(0,0,255)) # set the rgb color to green and blue for 2 rgb led
